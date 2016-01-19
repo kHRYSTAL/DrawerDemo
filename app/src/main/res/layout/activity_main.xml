@@ -1,45 +1,85 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent" android:layout_height="fill_parent"
-    android:orientation="vertical" android:background="#fff">
-    <TextView
-        android:text="sasasa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <me.khrystal.drawerdemo.WrapSlidingDrawer android:layout_width="fill_parent"
-        android:layout_height="fill_parent" android:handle="@+id/handle"
-        android:content="@+id/content" android:orientation="vertical"
-        android:topOffset="300dp"
+    android:orientation="vertical" android:background="@drawable/bg">
+    <me.khrystal.drawerdemo.WrapSlidingDrawer
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:handle="@+id/handle"
+        android:content="@+id/content"
+        android:orientation="vertical"
+        android:topOffset="140dp"
         android:id="@+id/slidingdrawer">
-
-        <LinearLayout android:id="@id/handle" android:layout_width="match_parent"
-            android:layout_height="44dip" android:orientation="horizontal"
+        <LinearLayout android:id="@+id/handle"
+            android:allowSingleTap="false"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:background="#fff"
             >
-            <TextView
-                android:layout_width="0dp"
+            <RelativeLayout
                 android:layout_weight="1"
-                android:background="#f00"
-                android:layout_height="wrap_content" />
-            <TextView
                 android:layout_width="0dp"
+                android:orientation="vertical"
+                android:layout_height="45dp">
+                <TextView
+                    android:id="@+id/login_login"
+                    android:layout_width="match_parent"
+                    android:textSize="18sp"
+                    android:text="登录"
+                    android:gravity="center"
+                    android:textColor="#999"
+                    android:layout_height="match_parent"
+                    />
+                <View
+                    android:visibility="invisible"
+                    android:id="@+id/indicator_login"
+                    android:background="#f00"
+                    android:layout_width="12dp"
+                    android:layout_height="1.5dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="10dp"
+                    />
+            </RelativeLayout>
+            <View
+                android:id="@+id/divider"
+                android:background="#333"
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"/>
+            <RelativeLayout
                 android:layout_weight="1"
-                android:background="#ff0"
-                android:layout_height="wrap_content" />
+                android:layout_width="0dp"
+                android:orientation="vertical"
+                android:layout_height="45dp">
+                <TextView
+                    android:id="@+id/login_register"
+                    android:layout_width="match_parent"
+                    android:textSize="18sp"
+                    android:text="注册"
+                    android:gravity="center"
+                    android:textColor="#999"
+                    android:layout_height="match_parent"
+                    />
+                <View
+                    android:visibility="invisible"
+                    android:id="@+id/indicator_register"
+                    android:background="#f00"
+                    android:layout_width="12dp"
+                    android:layout_height="1.5dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="10dp"
+                    />
+            </RelativeLayout>
         </LinearLayout>
-
-        <LinearLayout android:id="@id/content"
-            android:layout_width="fill_parent" android:layout_height="300dp"
-            android:background="#ffffff">
-
-            <TextView android:text="这是一个滑动式抽屉的示例"
-                android:id="@+id/tv"
-                android:textSize="18px"
-                android:textColor="#000000"
-                android:gravity="center_vertical|center_horizontal"
-                android:layout_width="match_parent"
-                android:textStyle="bold"
-                android:layout_height="100px"></TextView>
-        </LinearLayout>
-
+        <FrameLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#fff">
+        </FrameLayout>
     </me.khrystal.drawerdemo.WrapSlidingDrawer>
 </LinearLayout>
 
